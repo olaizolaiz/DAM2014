@@ -1,0 +1,23 @@
+* {
+    border: 1px solid #000;
+}
+ul {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li {
+    position: relative;
+}
+ul li ul {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    display: none;
+}
+ul li:hover ul { display: block; }
+
+.horizontal {
+    display: inline-block;
+}
