@@ -1,0 +1,29 @@
+li:first-child, li:last-child {
+    color: blue;
+}
+li:nth-child(5n+2) {
+    font-size: 1.2em;
+}
+li:nth-child(5n+3) {
+    font-size: 1.4em;
+}
+li:nth-child(5n+4) {
+    font-size: 1.6em;
+}
+li:nth-child(5n+5) {
+    font-size: 1.8em;
+}
+li::selection {
+    color: #fff;
+}
+p::first-line {
+    color: red;
+}
+p {
+    -webkit-color: red;
+}
+.bordes{
+    border:dashed 5px #000000;
+    -webkit-border-radius: 5px;
+    padding: 10px;
+}
