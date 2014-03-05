@@ -57,7 +57,8 @@ h1, .h1 {
 
 /* Layout */
 .wrapper {
-    width: 990px;
+    width: 90%;
+    max-width: 990px;
     margin: 0 auto;
     padding: 40px 0;
 }
@@ -70,10 +71,12 @@ h1, .h1 {
 }
 .clearfix{ zoom: 1;}
 .fleft {float: left;}
+.fright{float: right;}
+.overflowx{overflow-x: scroll;}
 .col-25 {width: 25%;}
 .col-50 {width: 50%;}
 .col-75 {width: 75%;}
-
+img{max-width: 100%;}
 /* Cabecera */
 .breadcrumb {
     text-transform: uppercase;
