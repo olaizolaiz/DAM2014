@@ -32,7 +32,17 @@ var anade = (function(){
     "use strict";
 
     var lista = $('#lista'),
+        lis = lista.children,
         count = lista.children.length;
+
+    var mostrarTexto = function(e) {
+        console.log(this);
+        console.log(e);
+    };
+
+    for (var i = lis.length - 1; i >= 0; i--) {
+        lis[i].addEventListener('click', mostrarTexto );
+    }
 
     var anade = function () {
         var li = document.createElement('li');
