@@ -8,7 +8,12 @@ var  validateForm = (function(){
     var validarRequired = function (){
         APP.validator.required(nombre.value);
 
-        if (!APP.validator.required(nombre.value)) nombre.className = "error";
+        if (!APP.validator.required(nombre.value)){
+            APP.validator.mensajeError(nombre, 'El nombre es obligatorio');
+        }
+        //else{
+        //    APP.validator.borrarMensaje(nombre);
+        //}
 
         return APP.validator.required(nombre.value) && APP.validator.required(apellido.value);
     };

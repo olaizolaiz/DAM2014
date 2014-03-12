@@ -5,8 +5,7 @@
     var validator = {
 
         required : function(valor) {
-
-            return valor.length>0;
+            return valor !== undefined && valor !== null && valor.trim().length > 0 && valor.length > 0;
         },
         password: function(valor){
             var longitudmin = this.required(valor) && valor.length>=6;
@@ -30,3 +29,9 @@
     return validator;
 
 })();
+
+//console.log(APP.validator.required("dsfgds") === true);
+//console.log(APP.validator.required("") === false);
+//console.log(APP.validator.required() === false);
+//console.log(APP.validator.required("     ") === false);
+//console.log(APP.validator.required(null) === false);
