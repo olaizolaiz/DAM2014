@@ -29,7 +29,7 @@ $(function(){
 
     //Seleccionar todas las filas impares del cuerpo de la tabla y ponerles de color de fondo gris.
     //Hay que tener en cuenta que el índice empieza por 0. Por tanto, deberíamos usar even en vez de odd
-    var $filas = $('tbody tr:odd').css('background-color', 'gray');
+    //var $filas = $('tbody tr:odd').css('background-color', 'gray');
     console.log($filas);
 
     //Seleccionar todas las imágenes en la página; registrar en la consola el atributo alt de cada imagen.
