@@ -1,5 +1,6 @@
 (function($){
 
+    var errores = [];
     $.fn.validate = function(valor){
 
         return this.filter('form').each(function(){
@@ -9,6 +10,7 @@
             $form.find(':input[data-validator=required]').on('blur', validarRequired);
             $form.find(':input[data-validator=email]').on('blur', validarEmail);
             $form.find(':input[data-validator=min]').on('blur', validarComentarios);
+            $form.find(':input[data-validator=password]').on('blur', validarPassword);
         });
 
         // var target = this.dataset.target;
@@ -33,8 +35,15 @@
             }
         });
 
-        if(errores.length > 0)
+        if(errores.length > 0){
+            errores =[];
+            console.log('El mensaje no se ha enviado');
             e.preventDefault();
+        }
+        else {
+            e.preventDefault();
+            console.log('El mensaje se ha enviado');
+        }
     };
 
     var validarRequired = function(event) {
@@ -42,7 +51,7 @@
         if (this.type === 'checkbox'){
             if (!this.checked) {
                 //mensajeError(this, opts.required.error);
-                //errores.push('error');
+                errores.push('error');
             }
             else {
                 //borrarMensaje(this);
@@ -51,7 +60,7 @@
         }
         if (!validator.required(this.value)){
             // mensajeError(this, opts.required.error);
-            // errores.push('error');
+            errores.push('error');
             console.log('Campo requerido');
         } else {
             // borrarMensaje(this);
@@ -61,7 +70,7 @@
     var validarEmail = function (){
         if (!validator.email(this.value)){
             //mensajeError(this, opts.email.error);
-            //errores.push('error');
+            errores.push('error');
             console.log('Campo de email');
         } else {
             //borrarMensaje(this);
@@ -71,8 +80,19 @@
     var validarComentarios = function () {
         if (!validator.min(this.value,this.dataset.max)){
             //mensajeError(this, opts.min.error);
-            //errores.push('error');
+            errores.push('error');
             console.log('Campo de comentarios');
+        } else {
+            //borrarMensaje(this);
+        }
+    };
+
+    var validarPassword = function (){
+
+        if (!validator.password(this.value)){
+            //mensajeError(this, opts.password.error);
+            errores.push('error');
+            console.log('Campo de password');
         } else {
             //borrarMensaje(this);
         }
@@ -97,7 +117,6 @@
             return this.required(valor) && email.test(valor);
         },
         min : function (valor, tam){
-
             return valor.length<=tam;
         }
     };
