@@ -8,9 +8,9 @@
 
             $form.on('submit', validarFormulario);
             $form.find(':input[data-validator=required]').on('blur', validarRequired);
-            $form.find(':input[data-validator=email]').on('blur', validarEmail);
-            $form.find(':input[data-validator=min]').on('blur', validarComentarios);
-            $form.find(':input[data-validator=password]').on('blur', validarPassword);
+            $form.find(':input[data-validator=email]').on('blur', validarCampos('email'));
+            $form.find(':input[data-validator=min]').on('blur', validarCampos('min'));
+            $form.find(':input[data-validator=password]').on('blur', validarCampos('password'));
         });
 
         // var target = this.dataset.target;
@@ -64,6 +64,22 @@
             console.log('Campo requerido');
         } else {
             // borrarMensaje(this);
+        }
+    };
+
+    var validarCampos = function (validador){
+         if (!validator.validador){
+            //mensajeError(this, opts.email.error);
+            errores.push('error');
+
+            switch(validador) {
+                case 'email' : console.log('Campo de email'); break;
+                case 'password' : console.log('Campo de password'); break;
+                case 'min' : console.log('Campo de comentarios'); break;
+            }
+        }
+        else {
+            //borrarMensaje(this);
         }
     };
 
