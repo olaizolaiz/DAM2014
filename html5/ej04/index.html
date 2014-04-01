@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <style>
+            input {width:100%;}
+        </style>
+        <link href="datetime-polyfill.css" rel="stylesheet">
+        <script type="text/javascript" src="js/modernizr-latest.js"></script>
+        <script type="text/javascript" src="js/datetime-polyfill.min.js"></script>
+    </head>
+    <body>
+        <h1>Comprobar funcionalidades de navegador con Modernizr</h1>
+        <form action="#">
+
+                <label for="email">E-mail:</label>
+                <input id="email" type="email">
+                <label for="url">URL:</label>
+                <input id="url" type="url">
+                <label for="date">Fecha:</label>
+                <input id="date" type="date">
+                <label for="time">Hora:</label>
+                <input id="time" type="time">
+                <label for="datetime">Fecha y hora:</label>
+                <input id="datetime" type="datetime">
+                <label for="month">Mes:</label>
+                <input id="month" type="month">
+                <label for="week">Semana:</label>
+                <input id="week" type="week">
+                <label for="number">Número:</label>
+                <input id="number" type="number">
+                <label for="range">Rango:</label>
+                <input id="range" type="range">
+                <label for="tel">Teléfono:</label>
+                <input id="tel" type="tel">
+                <label for="search">Búsqueda:</label>
+                <input id="search" type="search">
+                <label for="color">Color:</label>
+                <input id="color" type="color">
+                <label for="input-provincias">Datalist provincia:</label>
+                <input id="input-provincias" type="text" list="provincias">
+                <datalist id="provincias">
+                    <option label="GIPUZKOA" value="GIP"></option>
+                    <option label="BIZKAIA" value="BIZ"></option>
+                    <option label="ARABA" value="ARA"></option>
+                </datalist>
+                <label for="text">Texto con autofocus, placeholder, required y autocomplete:</label>
+                <input id="text" type="text" placeholder="introduzca su texto" autofocus required autocomplete="on">
+                <label for="number2">Número entre 0 y 10:</label>
+                <input id="number2" pattern="[0-10]" type="number">
+                <label for="file">Archivo:</label>
+                <input id="file" type="file" multiple>
+                <label for="password">Contraseña:</label>
+                <input id="password" type="password">
+                <label>Progress:</label>
+                <progress value="22" max="100"></progress>
+                <label>Meter:</label>
+                <meter value="2" min="0" max="10">2 out of 10</meter><br>
+                <input type="submit" value="Enviar">
+        </form>
+        <div id="soportado">
+            <h2>El navegador soporta las siguientes funcionalidades</h2>
+            <ul id="lista">
+            </ul>
+        </div>
+        <div id="nosoportado">
+            <h2>El navegador no soporta las siguientes funcionalidades</h2>
+            <ul id="listano">
+            </ul>
+        </div>
+        <div id="codecsoportado">
+            <h2>El navegador soporta los siguientes códecs de vídeo</h2>
+            <ul id="listacodec">
+            </ul>
+        </div>
+        <div id="codecnosoportado">
+            <h2>El navegador no soporta los siguientes códecs de vídeo</h2>
+            <ul id="listacodecno">
+            </ul>
+        </div>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
+
+<!-- el valor introducido debe cumplir lo siguiente: debe tener una longitud mínima de 8 caracteres, comenzar por un número y terminar en una letra mayúscula.
+
+- progress que represente el avance de completado de campos del formulario. -->
