@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>XMLHTTPREQUEST2</title>
+    </head>
+    <body>
+    <input type="submit" onclick="descargar();">
+	<script>
+
+    function descargar (){
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'http://upload.wikimedia.org/wikipedia/commons/9/9a/PNG_transparency_demonstration_2.png', true);
+
+xhr.responseType = 'arraybuffer';
+
+xhr.onload = function(e) {
+
+ window.requestFileSystem(TEMPORARY, 1024 * 1024, function(fs) {
+
+ fs.root.getFile('logo11w.png', {create: true}, function(fileEntry) {
+
+ fileEntry.createWriter(function(writer) {
+
+ writer.onwrite = function(e) {};
+
+ writer.onerror = function(e) {};
+
+ var bb = new BlobBuilder();
+
+ bb.append(xhr.response);
+
+ writer.write(bb.getBlob('image/png'));
+
+ }, onError);
+
+ }, onError);
+
+ }, console.log('error'));
+
+};
+
+xhr.send();
+
+}
+	</script>
+    </body>
+</html>

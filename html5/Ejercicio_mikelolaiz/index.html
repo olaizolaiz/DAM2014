@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio examen</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Acierta y gana</h1>
+        </header>
+        <section id="main">
+            <article id="game">
+            <h2>Estás jugando en el programa nº <span id="programa"></span></h2>
+                <div id="player_info">
+                </div>
+                <div id="options">
+                    <h3>¿Qué opción elegirá el concursante? ¡Haga click sobre una de ellas!</h3>
+                    <ul>
+                        <li data-select="0" id="option1" class="option">
+                        </li>
+                        <li data-select="1" id="option2" class="option">
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section id="puntuacion">
+        </section>
+        <section id="extra_info">
+            <div id="mapa">
+                <h2 id="mostrarmapa">Haga click aquí para ver dónde está realizándose este reto y su posición actual</h2>
+                <div id="mapcontainer">
+                    <aside>
+                    <ul>
+                        <li>Su posición está marcada por el siguiente icono: <img src="images/player_icon.png" /></li>
+                        <li>El programa actualmente se está desarrollando en la posición marcada por este icono: <img src="images/game_icon.png" /></li>
+                    </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        <aside>
+            <input type="button" value="¿Desea realizar la encuesta?" id="mostrarencuesta" />
+        </aside>
+        <footer>
+            <h2>Aplicación desarrollada por <a href="#">Empresa, S.L.</a></h2>
+        </footer>
+        <script src="js/app/main.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<h2>Rellene esta encuesta para ayudarnos a mejorar la aplicación</h2>
+        <form action="#">
+                <label for="email">Indroduzca su e-mail para que podamos ponernos en contacto con usted:</label>
+                <input id="email" type="email" autofocus>
+                <label for="date">Fecha:</label>
+                <input id="date" type="date">
+                <label for="number">¿Cuántas veces por semana utiliza nuestra aplicación?</label>
+                <input id="number" type="number"  pattern="[0-7]">
+                <label for="tel">Si lo desea, puede indicarnos su número de teléfono:</label>
+                <input id="tel" type="tel">
+                <label for="input-provincias">Indíquenos su provincia:</label>
+                <input id="input-provincias" type="text" list="provincias">
+                <datalist id="provincias">
+                    <option label="GIPUZKOA" value="GIP"></option>
+                    <option label="BIZKAIA" value="BIZ"></option>
+                    <option label="ARABA" value="ARA"></option>
+                </datalist>
+                <label for="text">En este espacio, puede indicarnos cualquier mejora o sugerencia para nuestra aplicación.</label>
+                <input id="text" type="text" placeholder="introduzca su texto">
+                <input type="submit" value="Enviar">
+        </form>
