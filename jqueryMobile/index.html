@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo jquery Mobile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+    <div data-role="page" id="pagina1" data-title="pagina1">
+        <div data-role="header">
+            <a href="#pagina1" data-icon="home">Home</a>
+            <h1>Página de inicio</h1>
+            <a href="index.html" data-icon="back" data-rel="back" data-direction="reverse">Atrás</a>
+        </div>
+        <div role="main" class="ui-content">
+            <p>Page content goes here.</p>
+            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right">
+                <h3>Contenido collapsible</h3>
+                <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-theme="a">
+            <ul>
+            <li><a data-theme="b" data-icon="home" href="#pagina2" class="ui-btn">Ir a página 2</a></li>
+            <li><a data-theme="b" data-icon="star" href="#pagina3" class="ui-btn">Ir a página 3</a></li>
+            <li><a data-theme="b" data-icon="arrow-u" href="formulario.html" data-rel="dialog" data-transition="pop" class="ui-btn">Ir al formulario</a></li>
+            </ul>
+        </div>
+        </div>
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+    <div data-role="page" id="pagina2" data-title="pagina2">
+        <div data-role="header">
+            <h1>Page Title</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <p>Page content goes here.</p>
+            <a href="#pagina1" data-transition="pop" class="ui-btn">Ir a página 1</a>
+            <a href="#pagina3" data-transition="turn" class="ui-btn">Ir a página 3</a>
+            <a href="index.html" data-rel="back" data-direction="reverse" class="ui-btn">VOLVER</a>
+
+            <h2>Si desea más información, haga click <a href="#popupInfo" data-rel="popup">Aquí</a></h2>
+
+            <div data-role="popup" id="popupInfo" >
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-transition="flip" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <h4>Aquí puede ver más información sobre el tema</h4>
+            <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
+            <h3>FAQ</h3>
+                <div data-role="collapsible" data-collapsed="false">
+                <h3>FAQ 1</h3>
+                <p>I'm the collapsible set content for section </p>
+                </div>
+
+                <div data-role="collapsible">
+                <h3>FAQ</h3>
+                <p>I'm the collapsible set content for section</p>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+    <div data-role="page" id="pagina3" data-title="pagina3">
+        <a href="#mypanel" data-role="button" data-icon="star">Abrir/Cerrar panel</a>
+        <div data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+            <a href="#formulario" data-rel="close" class="ui-btn">Cerrar panel</a>
+            <a href="index.html" data-ajax="false" class="ui-btn ui-icon-home ui-btn-icon-right">Volver a la página inicial</a>
+            <a href="index.html" data-rel="back" data-direction="reverse" class="ui-btn">VOLVER A PÁGINA ANTERIOR</a>
+        </div>
+        <div data-role="header">
+            <h1>Page Title</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <p>Page content goes here.</p>
+                <a href="#pagina1" class="ui-btn ui-icon-home ui-btn-icon-left">Ir a página 1</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#pagina2" class="ui-btn">Ir a página 2</a>
+                <a href="index.html" data-rel="back" data-direction="reverse" class="ui-btn">VOLVER</a>
+            </div>
+            </div>
+        </div>
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+</body>
+</html>
