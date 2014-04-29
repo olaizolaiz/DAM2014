@@ -6,7 +6,9 @@ define('Service', ['jquery'], function($){
             url: '/app/data/tweets.json',
             dataType: 'json',
             success: success,
-            error: error
+            error: function(jqXHR, textStatus, errorThrown){
+                error(errorThrown);
+            }
         });
     };
     return {

@@ -24,6 +24,14 @@ define('Data', ['ydn-db'], function(ydn) {
         req.fail(error);
     };
 
+    var getAllTweets = function(success, error) {
+        var req = db.values(tweetTable);
+        req.done(function(tweet){
+            success(tweet);
+        });
+        req.fail(error);
+    };
+
     var updateTweet = function(tweet, success, error) {
         getTweet(tweet.id, function(t){
             if(t) {
@@ -60,6 +68,7 @@ define('Data', ['ydn-db'], function(ydn) {
         getTweet : getTweet,
         updateTweet : updateTweet,
         removeTweet : removeTweet,
-        clear : clear
+        clear : clear,
+        getAllTweets : getAllTweets
     };
 });
